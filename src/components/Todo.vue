@@ -71,6 +71,7 @@ export default Vue.extend({
     },
     checkTodo(todo: Todo) {
       // チェック処理
+      todo.isFinished = !todo.isFinished;
     },
     deleteTodo(todo: Todo) {
       // 削除処理
