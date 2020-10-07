@@ -62,6 +62,9 @@ export default Vue.extend({
   }),
   methods: {
     registerTodo() {
+      if(this.todoName.length === 0 ) return ;
+
+
       // タスク登録処理
       this.todos.push({
         id: new Date().toISOString(),
