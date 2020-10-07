@@ -68,6 +68,8 @@ export default Vue.extend({
         name: this.todoName,
         isFinished: false
       })
+
+      this.todoName = "";
     },
     checkTodo(todo: Todo) {
       // チェック処理
