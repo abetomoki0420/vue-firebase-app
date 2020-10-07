@@ -64,7 +64,7 @@ export default Vue.extend({
     registerTodo() {
       // タスク登録処理
       this.todos.push({
-        id: new Date().toDateString(),
+        id: new Date().toISOString(),
         name: this.todoName,
         isFinished: false
       })
@@ -75,6 +75,11 @@ export default Vue.extend({
     },
     deleteTodo(todo: Todo) {
       // 削除処理
+      const idx = this.todos.findIndex( _todo => {
+        return _todo.id === todo.id
+      });
+
+      this.todos.splice(idx,1);
     }
   }
 });
