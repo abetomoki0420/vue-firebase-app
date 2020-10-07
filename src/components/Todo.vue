@@ -63,6 +63,11 @@ export default Vue.extend({
   methods: {
     registerTodo() {
       // タスク登録処理
+      this.todos.push({
+        id: new Date().toDateString(),
+        name: this.todoName,
+        isFinished: false
+      })
     },
     checkTodo(todo: Todo) {
       // チェック処理
